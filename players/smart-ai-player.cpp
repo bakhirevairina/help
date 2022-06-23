@@ -42,7 +42,7 @@ std::pair<int, int> smart_ai_player_t::make_move(const field_t &my_field, // NOL
       continue;
 
     for (auto direction : field_t::DIRECTIONS)
-      if (field_t::is_cell_valid(x + direction.first,y + direction.second)
+      if (field_t::is_cell_valid(x + direction.first,y + direction.second))
       if (enemy_field[x + direction.first][y + direction.second] == field_t::HIT_CELL)
         no_ship_near = false;
     if (no_ship_near)
