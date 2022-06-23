@@ -20,11 +20,7 @@ std::pair<int, int> smart_ai_player_t::make_move(const field_t &my_field, // NOL
     return {-1, -1};
   }
   
-  //for (size_t i = 0; i < field_t::FIELD_SIZE; ++i)
-  //  for (size_t j = 0; j < field_t::FIELD_SIZE; ++j)
-  //    if (enemy_field[i][j] == field_t::HIT_CELL)
-  //      for (auto direction : field_t::DIRECTIONS)
-  //        _close_to_ships.insert({i + direction.first, j + direction.second});
+
 
   if (queue.size()==0)
   for (int x = 0; x < field_t::FIELD_SIZE; x++)
@@ -46,7 +42,7 @@ std::pair<int, int> smart_ai_player_t::make_move(const field_t &my_field, // NOL
       continue;
 
     for (auto direction : field_t::DIRECTIONS)
-      //if (field_t::is_cell_valid(x + direction.first,y + direction.second);
+      if (field_t::is_cell_valid(x + direction.first,y + direction.second)
       if (enemy_field[x + direction.first][y + direction.second] == field_t::HIT_CELL)
         no_ship_near = false;
     if (no_ship_near)
